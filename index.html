@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournament Manager Pro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-content">
+        <h1><i class="fas fa-trophy"></i> Tournament Manager Pro</h1>
+        <div class="header-actions">
+          <button id="screenshot-btn" class="btn btn-secondary">
+            <i class="fas fa-camera"></i> Capture
+          </button>
+          <button id="view-toggle" class="btn btn-primary">
+            <i class="fas fa-user-shield"></i> Admin Dashboard
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Tournament Overview (Public View) -->
+      <section id="tournament-overview" class="active-view">
+        <div class="tournament-header">
+          <div class="tournament-meta">
+            <h2 id="tournament-name">Tournament Name</h2>
+            <p id="tournament-time"><i class="far fa-calendar-alt"></i> Date and Time</p>
+          </div>
+          <div class="tournament-stats">
+            <div class="stat-card">
+              <span class="stat-number" id="total-teams">0</span>
+              <span class="stat-label">Teams</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" id="total-points">0</span>
+              <span class="stat-label">Total Points</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="teams-container">
+          <div class="section-header">
+            <h3><i class="fas fa-users"></i> Team Standings</h3>
+            <div class="search-box">
+              <input type="text" id="team-search" placeholder="Search teams...">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+          <div id="teams-list">
+            <!-- Teams will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Admin Management View -->
+      <section id="admin-view">
+        <div class="admin-section">
+          <div class="section-header">
+            <h2><i class="fas fa-cog"></i> Tournament Settings</h2>
+          </div>
+          <div class="form-card">
+            <div class="form-group">
+              <label for="edit-tournament-name"><i class="fas fa-heading"></i> Tournament Name:</label>
+              <input type="text" id="edit-tournament-name" class="modern-input">
+            </div>
+            <div class="form-group">
+              <label for="edit-tournament-time"><i class="far fa-clock"></i> Tournament Time:</label>
+              <input type="datetime-local" id="edit-tournament-time" class="modern-input">
+            </div>
+            <button id="save-tournament" class="btn btn-success">
+              <i class="fas fa-save"></i> Save Settings
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-section">
+          <div class="section-header">
+            <h2><i class="fas fa-plus-circle"></i> Add New Team</h2>
+          </div>
+          <div class="form-card">
+            <form id="add-team-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="team-name"><i class="fas fa-signature"></i> Team Name:</label>
+                  <input type="text" id="team-name" class="modern-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="team-location"><i class="fas fa-map-marker-alt"></i> Location:</label>
+                  <input type="text" id="team-location" class="modern-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="team-points"><i class="fas fa-star"></i> Points:</label>
+                  <input type="number" id="team-points" class="modern-input" required min="0">
+                </div>
+                <div class="form-group">
+                  <label for="booyah-count"><i class="fas fa-fire"></i> Booyah Count:</label>
+                  <input type="number" id="booyah-count" class="modern-input" min="0" value="0">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="team-logo"><i class="fas fa-image"></i> Team Logo:</label>
+                <div class="file-upload-wrapper">
+                  <input type="file" id="team-logo" accept="image/*">
+                  <label for="team-logo" class="file-upload-label">
+                    <i class="fas fa-cloud-upload-alt"></i> Choose Logo
+                  </label>
+                </div>
+                <div id="logo-preview-container">
+                  <img id="logo-preview">
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-success">
+                <i class="fas fa-plus"></i> Add Team
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="admin-section">
+          <div class="section-header">
+            <h2><i class="fas fa-edit"></i> Manage Teams</h2>
+            <div class="search-box">
+              <input type="text" id="admin-team-search" placeholder="Search teams...">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+          <div id="team-management-list">
+            <!-- Existing teams for management will be inserted here -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Screenshot preview modal -->
+  <div id="screenshot-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Screenshot Preview</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="screenshot-preview">
+      </div>
+      <div class="modal-footer">
+        <button id="download-screenshot" class="btn btn-primary">
+          <i class="fas fa-download"></i> Download
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+
+  
+</body>
+</html>
