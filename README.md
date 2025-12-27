@@ -1,24 +1,43 @@
-# 🏆 Tournament Manager Pro
+# 🧮 Multiplication Table Generator
 
-**Live Demo:** https://tournament-management-pro.vercel.app/
+A simple and responsive **Multiplication Table Generator** built using **HTML**, **CSS**, and **JavaScript**.  
+Users can enter a number, and the app dynamically generates multiplication tables from **1 to that number**, each styled in a clean, card-based layout.
 
-Tournament Manager Pro is a web application designed to simplify the management of sports and e-sports tournaments. It allows admins to create, organize, and track tournaments efficiently — all from a modern, responsive dashboard.
+---
+
+## 🌐 Live Preview
+
+Check out the live demo of the project here:  
+[https://muradhasan49.github.io/Multiplication-Tables-/](https://muradhasan49.github.io/Multiplication-Tables-/)
+
+---
 
 ## 🚀 Features
 
-- 🎯 **Create & Manage Tournaments** — Easily add new tournaments with details such as name, date, and participants.  
-- 👥 **Team & Player Management** — Add, update, or remove players and teams with one click.  
-- 🏁 **Match Scheduling** — Automatically or manually schedule matches between teams.  
-- 📊 **Real-Time Standings** — Track live scores, rankings, and match progress.  
-- 🧠 **Smart Dashboard** — Clean, modern interface with instant updates.  
-- 📱 **Fully Responsive** — Works smoothly on desktops, tablets, and mobile devices.  
-- 🔐 **Admin Login** — Secure admin panel for managing tournament data.  
+- ✅ Generates multiple multiplication tables dynamically  
+- 💻 Fully responsive design — works on desktops and mobiles  
+- 🎨 Modern UI with hover effects and smooth transitions  
+- ⚡ Instant table creation using JavaScript DOM manipulation  
 
-## 🛠️ Tech Stack
+---
 
-- **Frontend:** HTML5, CSS3, JavaScript (Vanilla JS)
-- **Styling:** Modern UI/UX with responsive design principles (Flexbox / Grid)
-- **Hosting:** [Netlify](https://www.netlify.com/)
-- **Storage (if applicable):** LocalStorage / JSON-based data management
+## 🧠 How It Works
 
+1. Enter a number (e.g., `5`) in the input box  
+2. Click the **Submit** button  
+3. You’ll see multiplication tables from **1 to 5** displayed beautifully on the page  
 
+---
+
+---
+
+## 💻 Technologies Used
+
+- **HTML5** — for structure  
+- **CSS3** — for styling and responsiveness  
+- **JavaScript (ES6+)** — for interactivity and logic  
+
+---
+## Download or clone the repository:
+
+git clone https://github.com/muradhasan49/Multiplication-Tables-.git
